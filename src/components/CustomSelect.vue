@@ -68,6 +68,7 @@ export default {
 .customselect__button:hover {
   cursor: pointer;
   background-color: rgb(0, 163, 163);
+  box-shadow: 1px 1px 10px rgb(0, 163, 163);
 }
 
 .customselect__container {
@@ -106,6 +107,7 @@ export default {
 .customselect__options:hover {
   cursor: pointer;
   background-color: rgb(0, 163, 163);
+  box-shadow: 1px 1px 10px rgb(0, 163, 163);
 }
 
 @media only screen and (max-width: 1250px) {

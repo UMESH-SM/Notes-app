@@ -162,14 +162,15 @@ export default {
   border: none;
   border-radius: 10px;
   outline: none;
-  background-color: #db932d;
+  background-color: #f0ad4e;
   font-weight: 500;
   font-size: 1em;
 }
 
 .signin__form > button:hover {
-  background-color: #f0ad4e;
+  background-color: #db932d;
   cursor: pointer;
+  box-shadow: 1px 1px 10px #db932d;
 }
 
 .signin__signup__link {

@@ -11,7 +11,6 @@
         :key="note.id"
         :note="note"
         :handleNoteEdit="handleNoteEdit"
-        :search="search"
         :handleNoteDelete="handleNoteDelete"
         :note_color="colors[i % 14]"
       />
@@ -91,6 +90,12 @@ export default {
           .catch((error) => {
             console.log("Error updating data in Home : " + error);
           });
+      },
+      deep: true,
+    },
+    search: {
+      handler: function() {
+        window.scrollTo(0, 0);
       },
       deep: true,
     },
@@ -186,35 +191,55 @@ export default {
   border-radius: 50%;
 }
 
+@media only screen and (max-width: 1100px) {
+  .home__container {
+    padding-top: 17.5vh;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .home__container {
+    padding-top: 15vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .empty__container > img {
+    margin-top: 15vh;
+    height: 60vh;
+  }
+  .home__container {
+    padding-top: 15vh;
+  }
+}
+
 @media only screen and (max-width: 750px) {
   .empty__container > img {
-    margin-top: 30vh;
-    height: 30vh;
+    margin-top: 20vh;
+    height: 50vh;
+  }
+  .home__container {
+    padding-top: 15vh;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .empty__container > img {
+    margin-top: 25vh;
+    height: 40vh;
+  }
+  .home__container {
+    padding-top: 14vh;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .empty__container > img {
     margin-top: 30vh;
     height: 30vh;
   }
-}
-
-/* @media only screen and (max-width: 900px) {
-  .note__editor {
-    width: 60%;
+  .home__container {
+    padding-top: 13vh;
   }
 }
-
-@media only screen and (max-width: 750px) {
-  .note__editor {
-    width: 70%;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .note__editor {
-    width: 85%;
-  }
-} */
 </style>

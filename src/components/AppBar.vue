@@ -87,6 +87,7 @@ export default {
   font-size: 1em;
   font-weight: 500;
   background-color: #c4cdd1;
+  text-align: center;
 }
 
 .appbar__search > input:focus-visible {
@@ -117,6 +118,7 @@ export default {
 .appbar__buttons > button:hover {
   cursor: pointer;
   background-color: rgb(0, 163, 163);
+  box-shadow: 1px 1px 10px rgb(0, 163, 163);
 }
 
 @media only screen and (max-width: 1200px) {
@@ -154,6 +156,7 @@ export default {
 
   .appbar__buttons {
     flex: 1;
+    margin-right: 2%;
   }
 }
 </style>

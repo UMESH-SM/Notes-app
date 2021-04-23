@@ -7,7 +7,7 @@
       <div class="note__header">
         <input type="text" placeholder="enter title" v-model="note_title" />
         <button @click.self="handleNoteAddLocal(note_title, note_data)">
-          ✔
+          👍
         </button>
       </div>
       <textarea placeholder="enter details" v-model="note_data" />
@@ -37,10 +37,12 @@ export default {
 
 <style scoped>
 .note__details {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100vh;
+  transform: translate(-50%, -50%);
   background-color: rgba(61, 61, 61, 0.5);
   display: flex;
   align-items: center;
@@ -81,11 +83,13 @@ export default {
   background: none;
   border: none;
   outline: none;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
 .note__header > button:hover {
   cursor: pointer;
+  transform: scale(1.08);
+  transition: 0.4s ease;
 }
 
 .note__editor > textarea {

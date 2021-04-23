@@ -1,6 +1,6 @@
 <template>
   <div class="note" @click="handleToggle()" :style="cssVars">
-    <div class="note__title">{{ note.title }}</div>
+    <div id="id1" class="note__title">{{ note.title }}</div>
     <div class="note__data">{{ note.data }}</div>
   </div>
   <EditNoteDetails
@@ -18,7 +18,7 @@ import EditNoteDetails from "./EditNoteDetails.vue";
 export default {
   name: "Note",
   components: { EditNoteDetails },
-  props: ["note", "handleNoteEdit", "search", "handleNoteDelete", "note_color"],
+  props: ["note", "handleNoteEdit", "handleNoteDelete", "note_color"],
   data() {
     return {
       note_edit_toggle: false,
@@ -58,6 +58,10 @@ export default {
   cursor: pointer;
   margin-bottom: 3%;
   overflow-y: scroll;
+}
+
+.note:hover {
+  box-shadow: 1px 1px 10px var(--bg-color);
 }
 
 .note::-webkit-scrollbar {
@@ -116,6 +120,7 @@ export default {
 @media only screen and (max-width: 750px) {
   .note {
     width: 35%;
+    padding: 2%;
   }
 }
 
@@ -124,6 +129,8 @@ export default {
     width: 70%;
     height: 30vh;
     margin-bottom: 5%;
+    padding: 5%;
+    box-sizing: border-box;
   }
 }
 </style>

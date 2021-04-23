@@ -6,14 +6,17 @@
     <div class="note__editor">
       <div class="note__header">
         <button class="note__delete" @click.self="handleNoteDeleteConfirm()">
-          🗑
+          ⛔
         </button>
-        <input type="text" v-model="note_title" />
-        <button @click.self="handleNoteEditRequest(note_title, note_data)">
-          ✔
+        <input type="text" v-model="note_title" placeholder="enter title" />
+        <button
+          class="note__save"
+          @click.self="handleNoteEditRequest(note_title, note_data)"
+        >
+          👍
         </button>
       </div>
-      <textarea v-model="note_data" />
+      <textarea v-model="note_data" placeholder="enter details" />
     </div>
   </div>
 </template>
@@ -46,10 +49,12 @@ export default {
 
 <style scoped>
 .note__details {
-  position: absolute;
-  top: 0;
+  position: fixed;
+  top: 50%;
+  left: 50%;
   width: 100%;
   height: 100vh;
+  transform: translate(-50%, -50%);
   background-color: rgba(61, 61, 61, 0.5);
   display: flex;
   align-items: center;
@@ -90,17 +95,26 @@ export default {
   background: none;
   border: none;
   outline: none;
-  font-size: 1.5em;
+  font-size: 1.3em;
+}
+
+.note__header > button:first-child {
+  font-size: 1em;
 }
 
 .note__header > button:hover {
   cursor: pointer;
+  transform: scale(1.08);
+  transition: 0.6s ease;
 }
 
-.note__delete {
+/* .note__delete {
   color: red;
-  font-weight: bold;
-}
+} */
+
+/* .note__save {
+  font-size: 1.2em;
+} */
 
 .note__editor > textarea {
   padding: 5%;
